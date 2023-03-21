@@ -11,7 +11,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
+        <activity
+            android:name=".sistema.NavegadorActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <!-- Atividades de exemplo de intent explícito -->
         <activity
             android:name=".explicito.ExExplicito"
@@ -25,10 +33,8 @@
         </activity>
         <activity
             android:name=".explicito.ExExplicitoDetalhe"
-            android:label="Outra Atividade"
-            android:exported="false" />
-
-        <!-- Atividades de exemplo de intents implícitos -->
+            android:exported="false"
+            android:label="Outra Atividade" /> <!-- Atividades de exemplo de intents implícitos -->
         <activity
             android:name=".implicito.ExImplicito"
             android:exported="true"
@@ -41,12 +47,16 @@
         </activity>
         <activity
             android:name=".implicito.ExImplicitoDetalhe"
-            android:label="Outra Atividade"
-            android:exported="false">
-            <!-- definição de nome aqui -->
-        </activity>
+            android:exported="false"
+            android:label="Outra Atividade">
 
-        <!-- Atividades de exemplo de intents que passam parâmetros extras -->
+            <!-- definição de nome aqui. pode ter qqr nome mas por padrão deixa o nome da atividade. categoria sempre padrao. tem ação agora. -->
+            <intent-filter>
+                <action android:name="br.senac.exemplointents.EXEMPLO" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity> <!-- Atividades de exemplo de intents que passam parâmetros extras -->
         <activity
             android:name=".extras.ExExtras"
             android:exported="true">
@@ -58,21 +68,19 @@
         </activity>
         <activity
             android:name=".extras.ExExtrasDetalhe"
-            android:exported="false" />
-
-        <!-- Exemplos de intents que são chamados esperando resposta -->
+            android:exported="false" /> <!-- Exemplos de intents que são chamados esperando resposta -->
         <activity
-        android:name=".resposta.ExResposta"
-        android:exported="true">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            android:name=".resposta.ExResposta"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-            <activity
-                android:name=".resposta.ExRespostaDetalhe"
-                android:exported="false" />
+        <activity
+            android:name=".resposta.ExRespostaDetalhe"
+            android:exported="false" />
     </application>
 
 </manifest>
